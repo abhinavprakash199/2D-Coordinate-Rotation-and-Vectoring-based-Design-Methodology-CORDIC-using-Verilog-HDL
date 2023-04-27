@@ -9,7 +9,7 @@
 ---
 ### CODES
 ```verilog
-module rotation(x0, y0, theta, xf, yf, clk);
+module ROTATING(x0, y0, theta, xf, yf, clk);
   input clk;
   input [15:0] x0, y0;
   input [15:0] theta;
@@ -103,7 +103,7 @@ endmodule
 
 ### TESTBENCH
 ```verilog
-module rot_tb #(parameter period=5);
+module ROTATING_TB #(parameter period=5);
   reg clk=0;
   reg [15:0]x0,y0;
   reg [15:0]theta;
@@ -111,19 +111,23 @@ module rot_tb #(parameter period=5);
   always @(*)begin
     #period clk<=~clk;
     end
-  rotation dut(x0,y0,theta,xf,yf,clk);
+  ROTATING dut(x0,y0,theta,xf,yf,clk);
   initial begin
     {x0,y0,theta}={16'd3, 16'd4, 16'd5300};
    end
 endmodule
 ```
+### SIMULATION OUTPUT
+
+![image](https://user-images.githubusercontent.com/120498080/234827620-4b47fe9c-fe03-4d7d-9952-ff8079ef8aea.png)
+
 
 ## 2D Coordinate Vectoring based Design Methodology CORDIC using Verilog HDL
 ---
 ### CODES
 ```verilog
 
-module vectoring_2d(clk,xi,yi,theta,R);
+module VECTORING(clk,xi,yi,theta,R);
  input clk;
  input [15:0]xi,yi;
  output [15:0] R,theta;  
@@ -219,14 +223,14 @@ module itteration(clk,stage,xi,yi,initial_angle,micro_angle,xf,yf,out_angle);
 
 ### TESTBENCH
 ```verilog
-module vectoring_TB #(parameter period=5);
+module VECTORING_TB #(parameter period=5);
   reg clk=0;
   reg [15:0]xi,yi;
   wire [15:0]R,theta;
   always @(*)begin
     #period clk<=~clk;
     end
-  vectoring_2d dut(clk,xi,yi,theta,R);
+  VECTORING dut(clk,xi,yi,theta,R);
   initial begin
     {xi,yi}={16'd30, 16'd40};
    end
