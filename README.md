@@ -161,29 +161,30 @@ source ROTATING.tcl
 ```verilog
 set_attribute hdl_search_path {/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/} 
 set_attribute lib_search_path {/DIG_DESIGN/INTERNS/PDK_DIC/}
-
 set_attribute library {slow_vdd1v0_basicCells.lib}
-
-set myFiles [list ROTATING.v]
 set_attribute information_level 7
 
-set basename ROTATING;
-set myClk clk;
+set myFiles [list ROTATING.v]  # Name of the hdl file in hdl_search_path
 
-set myPeriod_ps 1000;
-set myInDelay_ns 0.2;
-set myOutDelay_ns 0.2;
-set runname report;
+set basename ROTATING; # Name of the top level module of our design
+set myClk clk;  # clock name 
 
+set myPeriod_ps 1000; # Dlock period of 10nsec
+set myInDelay_ns 0.2; # Delay from clocks to input valid
+set myOutDelay_ns 0.2; # Delay from clocks to output valid
+set runname report; # Name appended to output file  
+
+# Analysis and Elaborate the HDL files
 read_hdl ${myFiles}
 elaborate ${basename}
-
 set_top_module  ${basename}
 
+# Apply Constrains and Generate Clock
 set clock [define_clock -period ${myPeriod_ps} -name ${myClk} [clock_ports]]	
 external_delay -input $myInDelay_ns -clock ${myClk} [find / -port ports_in/*]
 external_delay -output $myOutDelay_ns -clock ${myClk} [find / -port ports_out/*]
 
+# Check if design is OK so far
 check_design -unresolved
 report timing -lint
 
