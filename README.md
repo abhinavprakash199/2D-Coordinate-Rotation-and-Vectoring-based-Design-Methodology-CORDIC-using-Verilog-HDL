@@ -460,3 +460,207 @@ endmodule
 ### SIMULATION OUTPUT
 ![image](https://user-images.githubusercontent.com/120498080/234833305-9252b1b2-a7bd-4746-92e8-40f0271179bf.png)
 
+
+
+
+```verilog
+module top(clk,xi,yi,xf,yf);
+ input clk;
+ input [15:0]xi,yi; 
+ output [15:0] xf,yf;
+ wire [15:0]theta,R;
+ wire dir[7:0];
+ vectoring_2d first(clk,xi,yi,theta,R,dir);
+ rotation_2d second(clk,dir,xi,yi,theta,xf,yf);
+endmodule
+
+module rotation_2d(clk,dir,xi,yi,theta,xf,yf);
+ input clk;
+ input [15:0]xi,yi;
+ input [15:0] theta;
+ input dir[7:0];
+ output [15:0] xf,yf;  
+ reg[2:0]stage;
+ wire [15:0]x1,x2,x3,x4,x5,x6,x7,x8,y1,y2,y3,y4,y5,y6,y7,y8;
+   wire [15:0]outangle0,outangle1,outangle2,outangle3,outangle4,outangle5,outangle6,outangle7;
+ //stage 0
+   itteration_rot i0(clk,dir[0],3'd0,xi,yi,16'd0,theta,16'd45_00,x1,y1,outangle0);
+ //stage 1
+   itteration_rot i1(clk,dir[1],3'd1,x1,y1,outangle0,theta,16'd26_57,x2,y2,outangle1); 
+ //stage 2
+   itteration_rot i2(clk,dir[2],3'd2,x2,y2,outangle1,theta,16'd14_04,x3,y3,outangle2);
+ //stage 3
+   itteration_rot i3(clk,dir[3],3'd3,x3,y3,outangle2,theta,16'd7_13,x4,y4,outangle3);
+ //stage 4
+   itteration_rot i4(clk,dir[4],3'd4,x4,y4,outangle3,theta,16'd3_58,x5,y5,outangle4); 
+ //stage 5
+   itteration_rot i5(clk,dir[5],3'd5,x5,y5,outangle4,theta,16'd1_79,x6,y6,outangle5);
+ //stage 6
+   itteration_rot i6(clk,dir[6],3'd6,x6,y6,outangle5,theta,16'd89,x7,y7,outangle6);
+ //stage 7
+   itteration_rot i7(clk,dir[7],3'd7,x7,y7,outangle6,theta,16'd44,x8,y8,outangle7); 
+   
+    assign xf=x8;
+    assign yf=y8;
+  // assign xf = (x8>>>1)+(x8>>>4)+(x8>>>5);
+   //assign yf = (y8>>>1)+(y8>>>4)+(y8>>>5);    
+ endmodule
+  
+ 
+
+module itteration_rot(clk,dir_stage,stage,xi,yi,initial_angle,theta,micro_angle,xf,yf,out_angle);
+ input clk;
+ input [2:0] stage;
+ input dir_stage;
+  input [15:0]xi,yi,theta,initial_angle,micro_angle;
+  output reg [15:0] xf,yf,out_angle;
+
+ always @(posedge clk)begin
+   if(!dir_stage)begin     //clockwise
+
+    case({xi[15],yi[15]})
+       2'b00 : begin
+          xf <= xi+(yi>>stage);
+            yf <= yi - (xi>>stage);
+       end
+       2'b01 : begin
+          xf <= xi-((16'hffff-yi+1)>>stage);
+          yf <= -(16'hffff-yi+1) - (xi>>stage);
+       end 
+      2'b10 : begin
+          xf <= -(16'hffff-xi+1)+(yi>>stage);
+          yf <= yi +((16'hffff-xi+1)>>stage);
+       end
+      2'b11 : begin 
+          xf <= -(16'hffff-xi+1)-((16'hffff-yi+1)>>stage);
+          yf <= -(16'hffff-yi+1) + ((16'hffff-xi+1)>>stage);
+       end
+    endcase
+    out_angle <= -micro_angle+initial_angle;
+   end
+   
+   else begin 
+    case({xi[15],yi[15]})
+       2'b00 : begin                              //anticlockwise
+          xf <= xi-(yi>>stage);
+          yf <= yi + (xi>>stage);
+        end
+       2'b01 : begin
+            xf <= xi + ((16'hffff-yi+1)>>stage);
+            yf <= -(16'hffff-yi+1) + (xi>>stage);
+        end 
+       2'b10 : begin
+          xf <= -((16'hffff-xi+1))-(yi>>stage);
+          yf <= yi - ((16'hffff-xi+1)>>stage);
+        end 
+       2'b11 : begin
+          xf <= -(16'hffff-xi+1)+((16'hffff-yi+1)>>stage);
+          yf <= -(16'hffff-yi+1) - ((16'hffff-xi+1)>>stage);
+        end
+    endcase
+         out_angle <= initial_angle+micro_angle;
+   end
+   end
+   endmodule
+
+module vectoring_2d(clk,xi,yi,theta,R,dir);
+ input clk;
+ input [15:0]xi,yi;
+ output [15:0] R,theta;
+ output reg dir[7:0];  
+ reg[2:0]stage;
+ wire dir0,dir1,dir2,dir3,dir4,dir5,dir6,dir7;
+ wire [15:0]x1,x2,x3,x4,x5,x6,x7,x8,y1,y2,y3,y4,y5,y6,y7,y8;
+ wire [15:0]outangle0,outangle1,outangle2,outangle3,outangle4,outangle5,outangle6,outangle7;
+ //stage 0
+   itteration_vec i0(clk,3'd0,xi,yi,16'd0,16'd45_00,x1,y1,outangle0,dir0);
+ //stage 1
+   itteration_vec i1(clk,3'd1,x1,y1,outangle0,16'd26_57,x2,y2,outangle1,dir1); 
+ //stage 2
+   itteration_vec i2(clk,3'd2,x2,y2,outangle1,16'd14_04,x3,y3,outangle2,dir2);
+ //stage 3
+   itteration_vec i3(clk,3'd3,x3,y3,outangle2,16'd7_13,x4,y4,outangle3,dir3);
+ //stage 4
+   itteration_vec i4(clk,3'd4,x4,y4,outangle3,16'd3_58,x5,y5,outangle4,dir4); 
+ //stage 5
+   itteration_vec i5(clk,3'd5,x5,y5,outangle4,16'd1_79,x6,y6,outangle5,dir5); 
+ //stage 6
+   itteration_vec i6(clk,3'd6,x6,y6,outangle5,16'd89,x7,y7,outangle6,dir6);
+ //stage 7
+   itteration_vec i7(clk,3'd7,x7,y7,outangle6,16'd44,x8,y8,outangle7,dir7); 
+
+    assign dir[0] = dir0;
+    assign dir[1] = dir1;
+    assign dir[2] = dir2;
+    assign dir[3] = dir3;
+    assign dir[4] = dir4;
+    assign dir[5] = dir5;
+    assign dir[6] = dir6;
+    assign dir[7] = dir7;
+  
+    assign R = x8;
+    assign theta = outangle7;
+  // assign xf = (x8>>>1)+(x8>>>4)+(x8>>>5);
+   //assign yf = (y8>>>1)+(y8>>>4)+(y8>>>5);    
+ endmodule
+  
+module itteration_vec(clk,stage,xi,yi,initial_angle,micro_angle,xf,yf,out_angle,dir_stage);
+ input clk;
+ input [2:0] stage;
+  input [15:0]xi,yi,initial_angle,micro_angle;
+  output reg [15:0] xf,yf,out_angle;
+  output reg dir_stage;
+
+ //assign micro_angle[7:0] ={16'd448,16'd895,16'd1790,16'd3580,16'd7130,16'd14040,16'd26570,16'd45000};
+ 
+ always @(posedge clk)begin
+  
+   if (yi[15])begin 
+    case({xi[15],yi[15]})
+       2'b00 : begin                              //anticlockwise
+          xf <= xi-(yi>>stage);
+          yf <= yi + (xi>>stage);
+        end
+       2'b01 : begin
+            xf <= xi + ((16'hffff-yi+1)>>stage);
+            yf <= -(16'hffff-yi+1) + (xi>>stage);
+        end 
+       2'b10 : begin
+          xf <= -((16'hffff-xi+1))-(yi>>stage);
+          yf <= yi - ((16'hffff-xi+1)>>stage);
+        end 
+       2'b11 : begin
+          xf <= -(16'hffff-xi+1)+((16'hffff-yi+1)>>stage);
+          yf <= -(16'hffff-yi+1) - ((16'hffff-xi+1)>>stage);
+        end
+    endcase
+         out_angle <= initial_angle-micro_angle;
+         dir_stage <=1;
+   end
+
+     else begin        //clockwise
+    case({xi[15],yi[15]})
+       2'b00 : begin
+          xf <= xi+(yi>>stage);
+            yf <= yi - (xi>>stage);
+       end
+       2'b01 : begin
+          xf <= xi-((16'hffff-yi+1)>>stage);
+          yf <= -(16'hffff-yi+1) - (xi>>stage);
+       end 
+      2'b10 : begin
+          xf <= -(16'hffff-xi+1)+(yi>>stage);
+          yf <= yi +((16'hffff-xi+1)>>stage);
+       end
+      2'b11 : begin 
+          xf <= -(16'hffff-xi+1)-((16'hffff-yi+1)>>stage);
+          yf <= -(16'hffff-yi+1) + ((16'hffff-xi+1)>>stage);
+       end
+    endcase
+    out_angle <= micro_angle+initial_angle;
+    dir_stage <=0;
+   end
+
+   end
+   endmodule
+```
