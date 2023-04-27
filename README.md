@@ -11,6 +11,9 @@
    * [Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC](#Computing-Transcendental-Functions-using-Rotating-and-Vectoring-based-Design-Methodology-CORDIC)
       + [SIMULATION OUTPUT of ROTATING_VECTORING](#SIMULATION-OUTPUT-of-ROTATING_VECTORING)
       + [SYNTHESIS of ROTATING_VECTORING using GENUS](#SYNTHESIS-of-ROTATING_VECTORING-using-GENUS)
+   * [Doubly Pipeline in Rotating and Vectoring based Design Methodology CORDIC](#Doubly-Pipeline-in-Rotating-and-Vectoring-based-Design-Methodology-CORDIC)
+      + [SIMULATION OUTPUT of DOUBLY PIPELINE](#SIMULATION-OUTPUT-of-DOUBLY-PIPELINE)
+      + [SYNTHESIS of DOUBLY PIPELINE using GENUS](#SYNTHESIS-of-DOUBLY-PIPELINE-using-GENUS)
 
 
 
@@ -581,7 +584,9 @@ endmodule
 
 
 
-
+## Doubly Pipeline in Rotating and Vectoring based Design Methodology CORDIC
+---
+### CODES
 ```verilog
 module DOUBLY_PIPELINE(clk,xi,yi,xf,yf);
  input clk;
@@ -783,3 +788,25 @@ module itteration_vec(clk,stage,xi,yi,initial_angle,micro_angle,xf,yf,out_angle,
    end
    endmodule
 ```
+### TESTBENCH 
+```verilog
+module ROTATING_VECTORING_TB #(parameter period=5);
+  reg clk=0;
+  reg [15:0]xi,yi;
+  wire [15:0]xf,yf;
+  always @(*)begin
+    #period clk<=~clk;
+    end
+  double_pipe dut(clk,xi,yi,xf,yf);
+  initial begin
+    {xi,yi}={16'd20, 16'd20};
+   end
+endmodule
+```
+### SIMULATION OUTPUT of DOUBLY PIPELINE
+
+![image](https://user-images.githubusercontent.com/120498080/234903628-18ade448-d2e3-4021-8d43-7fc7e0cd7b6d.png)
+
+### SYNTHESIS of DOUBLY PIPELINE using GENUS
+
+
