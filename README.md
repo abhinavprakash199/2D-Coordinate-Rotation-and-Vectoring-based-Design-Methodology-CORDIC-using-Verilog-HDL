@@ -253,8 +253,8 @@ module ROTATING_VECTORING(clk,xi,yi,xf,yf);
  input [15:0]xi,yi; 
  output [15:0] xf,yf;
  wire [15:0]theta,norm;
- vectoring first(clk,xi,yi,theta,norm);
- rotation second(xi,yi,theta,xf,yf,clk);
+ VECTORING first(clk,xi,yi,theta,norm);
+ ROTATING second(xi,yi,theta,xf,yf,clk);
 endmodule
 
 /////////////////////////Rotation////////////////////////////////////////////////
@@ -457,3 +457,6 @@ module ROTATING_VECTORING_TB #(parameter period=5);
    end
 endmodule
 ```
+### SIMULATION OUTPUT
+![image](https://user-images.githubusercontent.com/120498080/234833305-9252b1b2-a7bd-4746-92e8-40f0271179bf.png)
+
