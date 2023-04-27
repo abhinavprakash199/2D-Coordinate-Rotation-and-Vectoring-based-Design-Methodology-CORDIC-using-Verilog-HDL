@@ -3,7 +3,11 @@
 ## INDEX
 ---
    * [2D Coordinate Rotating based Design Methodology CORDIC using Verilog HDL](#2D-Coordinate-Rotating-based-Design-Methodology-CORDIC-using-Verilog-HDL)
+      + [SIMULATION OUTPUT of ROTATING](#SIMULATION-OUTPUT-of-ROTATING)
+      + [SYNTHESIS of ROTATING using GENUS](#SYNTHESIS-of-ROTATING-using-GENUS)
    * [2D Coordinate Vectoring based Design Methodology CORDIC using Verilog HDL](#2D-Coordinate-Vectoring-based-Design-Methodology-CORDIC-using-Verilog-HDL)
+      + [SIMULATION OUTPUT of VECTORING](#SIMULATION-OUTPUT-of-VECTORING)
+      + [SYNTHESIS of VECTORING using GENUS](#SYNTHESIS-of-VECTORING-using-GENUS)
    * [Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC](#Computing-Transcendental-Functions-using-Rotating-and-Vectoring-based-Design-Methodology-CORDIC)
 
 
@@ -119,9 +123,40 @@ module ROTATING_TB #(parameter period=5);
    end
 endmodule
 ```
-### SIMULATION OUTPUT
+### SIMULATION OUTPUT of ROTATING
 ![image](https://user-images.githubusercontent.com/120498080/234830625-3d804203-44e0-4f9c-bed0-e1a2a6b7e655.png)
 
+### SYNTHESIS of ROTATING using GENUS
+- First login to server
+```
+ssh -X dic_lab_02@192.168.88.31
+```
+- Then create a working directory (ROTATING) at: 
+> /DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/VECTORING/
+- Then write the `ROTATING.v` and `ROTATING.tcl` file in the working directory.
+
+- Now invoke CADENCE in the working directory.
+#### Steps to invoke Cadence
+```
+tcsh
+source /DIG_DESIGN02/APPLICATION_CMS/Cadence/cshrc_cadence
+```
+- Now invoke GENUS in the working directory.
+```
+genus -legacy_ui
+```
+- Now to runs synthesis run the `.tcl` file using followig command.
+```
+source ROTATING.tcl
+```
+#### TERMINAL
+![image](https://user-images.githubusercontent.com/120498080/234879918-a6eb292f-0ccb-44d3-9736-f72689cc95e7.png)
+
+#### SYNTHESIZED DESIGN
+
+![image](https://user-images.githubusercontent.com/120498080/234880392-f6793418-bd5d-405f-b923-8874ea36438e.png)
+
+![image](https://user-images.githubusercontent.com/120498080/234880603-fdd2d706-02e1-4128-8b69-89e4f27f550a.png)
 
 
 ## 2D Coordinate Vectoring based Design Methodology CORDIC using Verilog HDL
@@ -239,9 +274,25 @@ module VECTORING_TB #(parameter period=5);
 endmodule
 ```
 
-### SIMULATION OUTPUT
-
+### SIMULATION OUTPUT of VECTORING
 ![image](https://user-images.githubusercontent.com/120498080/234829624-069f476e-d320-4be5-9143-89d95a12d49c.png)
+
+### SYNTHESIS of VECTORING using GENUS
+![image](https://user-images.githubusercontent.com/120498080/234885994-24a27983-4c29-437c-be60-e19013ae9820.png)
+
+#### SYNTHESIZED DESIGN
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC
@@ -459,6 +510,62 @@ endmodule
 ```
 ### SIMULATION OUTPUT
 ![image](https://user-images.githubusercontent.com/120498080/234833305-9252b1b2-a7bd-4746-92e8-40f0271179bf.png)
+
+### SYNTHESIS USING GENUS
+![image](https://user-images.githubusercontent.com/120498080/234882531-b23e6c20-8edb-4b07-9c31-c4cf5ac2f48d.png)
+
+![image](https://user-images.githubusercontent.com/120498080/234882157-28627f65-10fd-4028-910f-364f5cd086ba.png)
+
+#### SYNTHESIZED DESIGN
+![image](https://user-images.githubusercontent.com/120498080/234881437-31d5c5b1-561c-4b7b-a945-f4bc7afe9969.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
