@@ -158,7 +158,7 @@ genus -legacy_ui
 source ROTATING.tcl
 ```
 #### `ROTATING.tcl` file 
-```verilog
+```c
 set_attribute hdl_search_path {/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/} 
 set_attribute lib_search_path {/DIG_DESIGN/INTERNS/PDK_DIC/}
 set_attribute library {slow_vdd1v0_basicCells.lib}
