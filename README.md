@@ -152,11 +152,14 @@ source ROTATING.tcl
 #### TERMINAL
 ![image](https://user-images.githubusercontent.com/120498080/234879918-a6eb292f-0ccb-44d3-9736-f72689cc95e7.png)
 
+![image](https://user-images.githubusercontent.com/120498080/234887335-e3baa5c1-f26f-419e-aae1-8ec535a6b925.png)
+
+
 #### SYNTHESIZED DESIGN
+![image](https://user-images.githubusercontent.com/120498080/234886939-9161f19c-bb44-4d1f-a99d-ca062bdbd07f.png)
 
-![image](https://user-images.githubusercontent.com/120498080/234880392-f6793418-bd5d-405f-b923-8874ea36438e.png)
+![image](https://user-images.githubusercontent.com/120498080/234887095-9a2987d6-a892-4410-885b-da87f1c57521.png)
 
-![image](https://user-images.githubusercontent.com/120498080/234880603-fdd2d706-02e1-4128-8b69-89e4f27f550a.png)
 
 
 ## 2D Coordinate Vectoring based Design Methodology CORDIC using Verilog HDL
