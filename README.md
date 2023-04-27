@@ -192,13 +192,13 @@ report timing -lint
 synthesize -to_mapped -effort medium
 
 # Write out the reports
-report timing > genus_reports/${basename}_${runname}_timing.rep
-report gates  > genus_reports/${basename}_${runname}_cell.rep
-report power  > genus_reports/${basename}_${runname}_power.rep
+report timing > genus_reports/${basename}_${runname}_timing.rep   # Timing Report
+report gates  > genus_reports/${basename}_${runname}_cell.rep     # Area Report
+report power  > genus_reports/${basename}_${runname}_power.rep    # Power Report
 
 # Write out the structural Verilog and sdc files
-write_hdl -mapped >  netlist/${basename}_${runname}.v
-write_sdc >  sdc/${basename}_${runname}.sdc
+write_hdl -mapped >  netlist/${basename}_${runname}.v  # HDL file created with gate level netlist
+write_sdc >  sdc/${basename}_${runname}.sdc    # Synopsys Design Constraints file created by GENUS(containg all timing related information which we have alraedy provided in the constrains file)
 
 # show result
 gui_raise
