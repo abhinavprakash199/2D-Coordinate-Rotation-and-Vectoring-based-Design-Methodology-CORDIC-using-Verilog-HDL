@@ -1,6 +1,6 @@
 # 2D-Coordinate-Rotating-and-Vectoring-based-Design-Methodology-CORDIC-using-Verilog-HDL
 
-## INDEX
+# Table of Contents
 ---
    * [2D Coordinate Rotating based Design Methodology CORDIC using Verilog HDL](#2D-Coordinate-Rotating-based-Design-Methodology-CORDIC-using-Verilog-HDL)
       + [SIMULATION OUTPUT of ROTATING](#SIMULATION-OUTPUT-of-ROTATING)
@@ -14,6 +14,9 @@
    * [Doubly Pipeline in Rotating and Vectoring based Design Methodology CORDIC](#Doubly-Pipeline-in-Rotating-and-Vectoring-based-Design-Methodology-CORDIC)
       + [SIMULATION OUTPUT of DOUBLY PIPELINE](#SIMULATION-OUTPUT-of-DOUBLY-PIPELINE)
       + [SYNTHESIS of DOUBLY PIPELINE using GENUS](#SYNTHESIS-of-DOUBLY-PIPELINE-using-GENUS)
+
+    * [Acknowledgement](#Acknowledgement)
+    * [Inquiries](#Inquiries)
 
 
 
@@ -796,4 +799,12 @@ endmodule
 ![image](https://user-images.githubusercontent.com/120498080/234933426-eb93eac7-518b-42e9-b0da-1c2a92fe1085.png)
 
 #### SYNTHESIZED DESIGN
+
+## Acknowledgement
+---
+- [Dr. Amit Acharyya](https://people.iith.ac.in/amit_acharyya/)
+
+## Inquiries
+---
+- Connect with me at [LinkedIn](https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile)
 
