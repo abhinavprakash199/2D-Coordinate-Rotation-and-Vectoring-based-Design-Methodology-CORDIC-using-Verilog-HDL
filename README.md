@@ -343,21 +343,6 @@ endmodule
 
 ![image](https://user-images.githubusercontent.com/120498080/234889946-9359a9a6-4934-47c9-a955-9824e94a437d.png)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC
 ---
 ### CODES
@@ -581,55 +566,6 @@ endmodule
 
 #### SYNTHESIZED DESIGN
 ![image](https://user-images.githubusercontent.com/120498080/234881437-31d5c5b1-561c-4b7b-a945-f4bc7afe9969.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Doubly Pipeline in Rotating and Vectoring based Design Methodology CORDIC
 ---
