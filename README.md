@@ -794,10 +794,13 @@ endmodule
 
 ### SYNTHESIS of DOUBLY PIPELINE using GENUS
 ![image](https://user-images.githubusercontent.com/120498080/234931535-f41f9392-ca92-41dd-8a6f-20a08d98dd90.png)
-
-![image](https://user-images.githubusercontent.com/120498080/234933426-eb93eac7-518b-42e9-b0da-1c2a92fe1085.png)
+![image](https://user-images.githubusercontent.com/120498080/234939259-e7ee9dff-7746-4e69-84c2-494867964de9.png)
 
 #### SYNTHESIZED DESIGN
+![image](https://user-images.githubusercontent.com/120498080/234938911-cff61772-156d-406d-8127-c805637e7520.png)
+![image](https://user-images.githubusercontent.com/120498080/234939049-5e73d415-76cf-4219-ba47-da304ee664fd.png)
+![image](https://user-images.githubusercontent.com/120498080/234939174-e43b5a3e-f806-4070-8a24-22f709f8a0a5.png)
+
 
 ## Acknowledgement
 ---
