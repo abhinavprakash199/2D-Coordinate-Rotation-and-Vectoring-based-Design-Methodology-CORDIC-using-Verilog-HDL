@@ -9,8 +9,8 @@
       + [SIMULATION OUTPUT of VECTORING](#SIMULATION-OUTPUT-of-VECTORING)
       + [SYNTHESIS of VECTORING using GENUS](#SYNTHESIS-of-VECTORING-using-GENUS)
    * [Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC](#Computing-Transcendental-Functions-using-Rotating-and-Vectoring-based-Design-Methodology-CORDIC)
-      + [SIMULATION OUTPUT of VECTORING](#SIMULATION-OUTPUT-of-VECTORING)
-      + [SYNTHESIS of VECTORING using GENUS](#SYNTHESIS-of-VECTORING-using-GENUS)
+      + [SIMULATION OUTPUT of ROTATING_VECTORING](#SIMULATION-OUTPUT-of-ROTATING_VECTORING)
+      + [SYNTHESIS of ROTATING_VECTORING using GENUS](#SYNTHESIS-of-ROTATING_VECTORING-using-GENUS)
 
 
 
@@ -286,7 +286,14 @@ endmodule
 ### SYNTHESIS of VECTORING using GENUS
 ![image](https://user-images.githubusercontent.com/120498080/234885994-24a27983-4c29-437c-be60-e19013ae9820.png)
 
+![image](https://user-images.githubusercontent.com/120498080/234889509-cd0ce787-95d3-4834-822c-a290912bb953.png)
+
 #### SYNTHESIZED DESIGN
+![image](https://user-images.githubusercontent.com/120498080/234889801-510c0986-d9ba-4de5-aeda-af588c1b828e.png)
+
+![image](https://user-images.githubusercontent.com/120498080/234889946-9359a9a6-4934-47c9-a955-9824e94a437d.png)
+
+
 
 
 
@@ -514,17 +521,16 @@ module ROTATING_VECTORING_TB #(parameter period=5);
    end
 endmodule
 ```
-### SIMULATION OUTPUT
+### SIMULATION OUTPUT of ROTATING_VECTORING
 ![image](https://user-images.githubusercontent.com/120498080/234833305-9252b1b2-a7bd-4746-92e8-40f0271179bf.png)
 
-### SYNTHESIS USING GENUS
+### SYNTHESIS of ROTATING_VECTORING using GENUS
 ![image](https://user-images.githubusercontent.com/120498080/234882531-b23e6c20-8edb-4b07-9c31-c4cf5ac2f48d.png)
 
 ![image](https://user-images.githubusercontent.com/120498080/234882157-28627f65-10fd-4028-910f-364f5cd086ba.png)
 
 #### SYNTHESIZED DESIGN
 ![image](https://user-images.githubusercontent.com/120498080/234881437-31d5c5b1-561c-4b7b-a945-f4bc7afe9969.png)
-
 
 
 
