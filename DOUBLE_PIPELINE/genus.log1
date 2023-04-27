@@ -1,0 +1,45 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2020 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+Version: 20.10-p001_1, built Fri Dec 11 02:59:55 PST 2020
+Options: -legacy_ui 
+Date:    Thu Apr 27 21:35:51 2023
+Host:    DIGITAL-SERVER (x86_64 w/Linux 3.10.0-1160.36.2.el7.x86_64) (8cores*64cpus*4physical cpus*Intel(R) Xeon(R) CPU E5-4650 0 @ 2.70GHz 20480KB) (131826588KB)
+PID:     64208
+OS:      Red Hat Enterprise Linux Server release 7.9 (Maipo)
+
+Checking out license: Genus_Synthesis
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Loading tool scripts...
+
+Finished loading tool scripts (19 seconds elapsed).
+
+WARNING: This version of the tool is 867 days old.
+legacy_genus:/> source ROTATING.tcl
+File 'ROTATING.tcl' does not exist.
+legacy_genus:/> cwd
+Error   : A required argument was not specified. [TUI-202] [cwd]
+        : Missing subcommand
+        : Rerun the command specifying all required arguments.
+  cwd: creates an HDL object for ChipWare developer
+Usage: cwd subcommand [-h]
+
+  The 'subcommand' can be one of the following:
+check        - invokes the cwd linter
+create_check - registers a check to the linter
+report_check - report information about various checknames and checkpoints
+Failed on cwd
+legacy_genus:/> source ROTATING.tcl
+File 'ROTATING.tcl' does not exist.
+legacy_genus:/> source ROTATING.tcl
+File 'ROTATING.tcl' does not exist.
+legacy_genus:/> exit
+Normal exit.
