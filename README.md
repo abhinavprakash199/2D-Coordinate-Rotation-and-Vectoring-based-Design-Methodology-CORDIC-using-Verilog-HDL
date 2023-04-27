@@ -583,17 +583,17 @@ endmodule
 
 
 ```verilog
-module top(clk,xi,yi,xf,yf);
+module DOUBLY_PIPELINE(clk,xi,yi,xf,yf);
  input clk;
  input [15:0]xi,yi; 
  output [15:0] xf,yf;
  wire [15:0]theta,R;
- wire dir[7:0];
- vectoring_2d first(clk,xi,yi,theta,R,dir);
- rotation_2d second(clk,dir,xi,yi,theta,xf,yf);
+ wire [7:0]dir;
+ VECTORING first(clk,xi,yi,theta,R,dir);
+ ROTATING second(clk,dir,xi,yi,theta,xf,yf);
 endmodule
 
-module rotation_2d(clk,dir,xi,yi,theta,xf,yf);
+module ROTATING(clk,dir,xi,yi,theta,xf,yf);
  input clk;
  input [15:0]xi,yi;
  input [15:0] theta;
@@ -682,7 +682,7 @@ module itteration_rot(clk,dir_stage,stage,xi,yi,initial_angle,theta,micro_angle,
    end
    endmodule
 
-module vectoring_2d(clk,xi,yi,theta,R,dir);
+module ROTATING(clk,xi,yi,theta,R,dir);
  input clk;
  input [15:0]xi,yi;
  output [15:0] R,theta;
