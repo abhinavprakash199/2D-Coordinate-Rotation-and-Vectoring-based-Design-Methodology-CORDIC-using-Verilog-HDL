@@ -1,8 +1,9 @@
 # 2D-Coordinate-Rotating-and-Vectoring-based-Design-Methodology-CORDIC-using-Verilog-HDL
 
-* [2D Coordinate Rotating based Design Methodology CORDIC using Verilog HDL](#2D-Coordinate-Rotating-based-Design-Methodology-CORDIC-using-Verilog-HDL)
-* [2D Coordinate Vectoring based Design Methodology CORDIC using Verilog HDL](#2D-Coordinate-Vectoring-based-Design-Methodology-CORDIC-using-Verilog-HDL)
-* [Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC](#Computing-Transcendental-Functions-using-Rotating-and-Vectoring-based-Design-Methodology-CORDIC)
+## INDEX
+    * [2D Coordinate Rotating based Design Methodology CORDIC using Verilog HDL](#2D-Coordinate-Rotating-based-Design-Methodology-CORDIC-using-Verilog-HDL)
+    * [2D Coordinate Vectoring based Design Methodology CORDIC using Verilog HDL](#2D-Coordinate-Vectoring-based-Design-Methodology-CORDIC-using-Verilog-HDL)
+    * [Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC](#Computing-Transcendental-Functions-using-Rotating-and-Vectoring-based-Design-Methodology-CORDIC)
 
 
 ## 2D Coordinate Rotating based Design Methodology CORDIC using Verilog HDL
@@ -118,8 +119,8 @@ module ROTATING_TB #(parameter period=5);
 endmodule
 ```
 ### SIMULATION OUTPUT
+![image](https://user-images.githubusercontent.com/120498080/234830625-3d804203-44e0-4f9c-bed0-e1a2a6b7e655.png)
 
-![image](https://user-images.githubusercontent.com/120498080/234827620-4b47fe9c-fe03-4d7d-9952-ff8079ef8aea.png)
 
 
 ## 2D Coordinate Vectoring based Design Methodology CORDIC using Verilog HDL
@@ -237,11 +238,16 @@ module VECTORING_TB #(parameter period=5);
 endmodule
 ```
 
+### SIMULATION OUTPUT
+
+![image](https://user-images.githubusercontent.com/120498080/234829624-069f476e-d320-4be5-9143-89d95a12d49c.png)
+
+
 ## Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC
 ---
 ### CODES
 ```verilog
-module top(clk,xi,yi,xf,yf);
+module ROTATING_VECTORING(clk,xi,yi,xf,yf);
  input clk;
  input [15:0]xi,yi; 
  output [15:0] xf,yf;
@@ -251,7 +257,7 @@ module top(clk,xi,yi,xf,yf);
 endmodule
 
 /////////////////////////Rotation////////////////////////////////////////////////
-module rotation(x0, y0, theta, xf, yf, clk);
+module ROTATING(x0, y0, theta, xf, yf, clk);
   input clk;
   input [15:0] x0, y0;
   input [15:0] theta;
@@ -342,16 +348,9 @@ module cordics(clk,stage,xi,yi,theta,uangle,inangle,xf,yf,outangle);
   end
 endmodule
 
-
-
-
-
-
-
-
 /////////////////////////Vectoring////////////////////////////////////////////////
 
-module vectoring(clk, xi, yi, theta, norm);
+module VECTORING(clk, xi, yi, theta, norm);
 input clk;
 input [15:0] xi, yi;
 output [15:0] theta, norm;
@@ -444,14 +443,14 @@ output reg [15:0] xf, yf, outangle;
 ```
 ### TESTBENCH
 ```verilog
-module mix_TB #(parameter period=5);
+module ROTATING_VECTORING_TB #(parameter period=5);
   reg clk=0;
   reg [15:0]xi,yi;
   wire [15:0]xf,yf;
   always @(*)begin
     #period clk<=~clk;
     end
-  top dut(clk,xi,yi,xf,yf);
+  ROTATING_VECTORING dut(clk,xi,yi,xf,yf);
   initial begin
     {xi,yi}={16'd20, 16'd20};
    end
