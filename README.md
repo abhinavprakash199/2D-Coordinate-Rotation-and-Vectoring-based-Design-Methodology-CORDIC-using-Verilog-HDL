@@ -166,18 +166,18 @@ set_attribute information_level 7
 
 set myFiles [list ROTATING.v]  # Name of the hdl file in hdl_search_path
 
-set basename ROTATING; # Name of the top level module of our design
-set myClk clk;  # clock name 
+set basename ROTATING;         # Name of the top level module of our design
+set myClk clk;                 # clock name 
 
-set myPeriod_ps 1000; # Dlock period of 10nsec
-set myInDelay_ns 0.2; # Delay from clocks to input valid
-set myOutDelay_ns 0.2; # Delay from clocks to output valid
-set runname report; # Name appended to output file  
+set myPeriod_ps 1000;          # Dlock period of 10nsec
+set myInDelay_ns 0.2;          # Delay from clocks to input valid
+set myOutDelay_ns 0.2;         # Delay from clocks to output valid
+set runname report;            # Name appended to output file  
 
 # Analysis and Elaborate the HDL files
-read_hdl ${myFiles}
-elaborate ${basename}
-set_top_module  ${basename}
+read_hdl ${myFiles}            # Read HDL files and check for syntex errors 
+elaborate ${basename}          # Convert RTL into Boolean Structures, perform State Reduction, encoding, register infering and bind all leaf cells to provided libraries 
+set_top_module  ${basename} 
 
 # Apply Constrains and Generate Clock
 set clock [define_clock -period ${myPeriod_ps} -name ${myClk} [clock_ports]]	
@@ -192,13 +192,13 @@ report timing -lint
 synthesize -to_mapped -effort medium
 
 # Write out the reports
-report timing > genus_reports/${basename}_${runname}_timing.rep   # Timing Report
-report gates  > genus_reports/${basename}_${runname}_cell.rep     # Area Report
-report power  > genus_reports/${basename}_${runname}_power.rep    # Power Report
+report timing > genus_reports/${basename}_${runname}_timing.rep    # Timing Report
+report gates  > genus_reports/${basename}_${runname}_cell.rep      # Area Report
+report power  > genus_reports/${basename}_${runname}_power.rep     # Power Report
 
 # Write out the structural Verilog and sdc files
 write_hdl -mapped >  netlist/${basename}_${runname}.v  # HDL file created with gate level netlist
-write_sdc >  sdc/${basename}_${runname}.sdc    # Synopsys Design Constraints file created by GENUS(containg all timing related information which we have alraedy provided in the constrains file)
+write_sdc >  sdc/${basename}_${runname}.sdc            # Synopsys Design Constraints file created by GENUS(containg all timing related information which we have alraedy provided in the constrains file)
 
 # show result
 gui_raise
