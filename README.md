@@ -5,15 +5,19 @@
    * [2D Coordinate Rotating based Design Methodology CORDIC using Verilog HDL](#2D-Coordinate-Rotating-based-Design-Methodology-CORDIC-using-Verilog-HDL)
       + [SIMULATION OUTPUT of ROTATING](#SIMULATION-OUTPUT-of-ROTATING)
       + [SYNTHESIS of ROTATING using GENUS](#SYNTHESIS-of-ROTATING-using-GENUS)
+      + [Post Synthesis Simulation of ROTATION using VIVADO](#Post-Synthesis-Simulation-of-ROTATION-using-VIVADO)
    * [2D Coordinate Vectoring based Design Methodology CORDIC using Verilog HDL](#2D-Coordinate-Vectoring-based-Design-Methodology-CORDIC-using-Verilog-HDL)
       + [SIMULATION OUTPUT of VECTORING](#SIMULATION-OUTPUT-of-VECTORING)
       + [SYNTHESIS of VECTORING using GENUS](#SYNTHESIS-of-VECTORING-using-GENUS)
+      + [Post Synthesis Simulation of VECTORING using VIVADO](#Post-Synthesis-Simulation-of-ROTATION-using-VIVADO)
    * [Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC](#Computing-Transcendental-Functions-using-Rotating-and-Vectoring-based-Design-Methodology-CORDIC)
       + [SIMULATION OUTPUT of ROTATING_VECTORING](#SIMULATION-OUTPUT-of-ROTATING_VECTORING)
       + [SYNTHESIS of ROTATING_VECTORING using GENUS](#SYNTHESIS-of-ROTATING_VECTORING-using-GENUS)
+      + [Post Synthesis Simulation of ROTATING_VECTORING using VIVADO](#Post-Synthesis-Simulation-of-ROTATING_VECTORING-using-VIVADO)
    * [Doubly Pipeline in Rotating and Vectoring based Design Methodology CORDIC](#Doubly-Pipeline-in-Rotating-and-Vectoring-based-Design-Methodology-CORDIC)
       + [SIMULATION OUTPUT of DOUBLY PIPELINE](#SIMULATION-OUTPUT-of-DOUBLY-PIPELINE)
       + [SYNTHESIS of DOUBLY PIPELINE using GENUS](#SYNTHESIS-of-DOUBLY-PIPELINE-using-GENUS)
+      + [Post Synthesis Simulation of DOUBLY PIPELINE using VIVADO](#Post-Synthesis-Simulation-of-DOUBLY-PIPELINE-using-VIVADO)
    * [Acknowledgement](#Acknowledgement)
    * [Inquiries](#Inquiries)
 
@@ -215,6 +219,12 @@ gui_raise
 ![image](https://user-images.githubusercontent.com/120498080/234886939-9161f19c-bb44-4d1f-a99d-ca062bdbd07f.png)
 
 ![image](https://user-images.githubusercontent.com/120498080/234887095-9a2987d6-a892-4410-885b-da87f1c57521.png)
+
+### Post Synthesis Simulation of ROTATION using VIVADO
+- For Post Synthesis Simulation we need the genetered `ROTATION_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
+- We also need a test bench to verify the generted netlist(same as we used during Behavioral Simulation).
+
+
 
 
 
