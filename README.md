@@ -221,8 +221,12 @@ gui_raise
 ![image](https://user-images.githubusercontent.com/120498080/234887095-9a2987d6-a892-4410-885b-da87f1c57521.png)
 
 ### Post Synthesis Simulation of ROTATION using VIVADO
-- For Post Synthesis Simulation we need the genetered `ROTATION_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
+- For Post Synthesis Simulation we need the genetered `/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/netlist/ROTATION_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
 - We also need a test bench to verify the generted netlist(same as we used during Behavioral Simulation).
+
+#### Simulated Output 
+![image](https://user-images.githubusercontent.com/120498080/235318859-f1d3bbe8-0769-4de1-a9fd-0988bf33bec4.png)
+
 
 
 
@@ -355,6 +359,14 @@ endmodule
 ![image](https://user-images.githubusercontent.com/120498080/234889801-510c0986-d9ba-4de5-aeda-af588c1b828e.png)
 
 ![image](https://user-images.githubusercontent.com/120498080/234889946-9359a9a6-4934-47c9-a955-9824e94a437d.png)
+
+### Post Synthesis Simulation of VECTORING using VIVADO
+- For Post Synthesis Simulation we need the genetered `/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/netlist/VECTORING_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
+- We also need a test bench to verify the generted netlist(same as we used during Behavioral Simulation).
+
+#### Simulated Output 
+![image](https://user-images.githubusercontent.com/120498080/235319156-8ee0c95c-edf5-4c18-baf3-6594a53c820f.png)
+
 
 ## Computing Transcendental Functions using Rotating and Vectoring based Design Methodology CORDIC
 ---
@@ -579,6 +591,15 @@ endmodule
 
 #### SYNTHESIZED DESIGN
 ![image](https://user-images.githubusercontent.com/120498080/234881437-31d5c5b1-561c-4b7b-a945-f4bc7afe9969.png)
+
+### Post Synthesis Simulation of ROTATING_VECTORING using VIVADO
+- For Post Synthesis Simulation we need the genetered `/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/netlist/ROTATING_VECTORING_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
+- We also need a test bench to verify the generted netlist(same as we used during Behavioral Simulation).
+
+#### Simulated Output 
+![image](https://user-images.githubusercontent.com/120498080/235319349-2acbcf7d-23c6-40e5-9e4a-e08e97b14dce.png)
+
+
 
 ## Doubly Pipeline in Rotating and Vectoring based Design Methodology CORDIC
 ---
@@ -811,6 +832,13 @@ endmodule
 ![image](https://user-images.githubusercontent.com/120498080/234938911-cff61772-156d-406d-8127-c805637e7520.png)
 ![image](https://user-images.githubusercontent.com/120498080/234939049-5e73d415-76cf-4219-ba47-da304ee664fd.png)
 ![image](https://user-images.githubusercontent.com/120498080/234939174-e43b5a3e-f806-4070-8a24-22f709f8a0a5.png)
+
+### Post Synthesis Simulation of DOUBLY PIPELINE using VIVADO
+- For Post Synthesis Simulation we need the genetered `/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/netlist/DOUBLY_PIPELINE_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
+- We also need a test bench to verify the generted netlist(same as we used during Behavioral Simulation).
+
+#### Simulated Output 
+![Capture1](https://user-images.githubusercontent.com/120498080/235319866-4eb5d9e1-9170-4b6f-b179-98555a035cab.png)
 
 
 ## Acknowledgement
