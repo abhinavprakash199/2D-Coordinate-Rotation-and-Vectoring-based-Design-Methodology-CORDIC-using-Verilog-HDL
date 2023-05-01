@@ -362,6 +362,8 @@ endmodule
 
 ![image](https://user-images.githubusercontent.com/120498080/234889946-9359a9a6-4934-47c9-a955-9824e94a437d.png)
 
+- ***NOTE** We can find all the generated file in the attached files in git.* 
+
 ### Post Synthesis Simulation of VECTORING using VIVADO
 - For Post Synthesis Simulation we need the genetered `/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/netlist/VECTORING_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
 - We also need a test bench to verify the generted netlist(same as we used during Behavioral Simulation).
@@ -593,6 +595,8 @@ endmodule
 
 #### SYNTHESIZED DESIGN
 ![image](https://user-images.githubusercontent.com/120498080/234881437-31d5c5b1-561c-4b7b-a945-f4bc7afe9969.png)
+
+- ***NOTE** We can find all the generated file in the attached files in git.* 
 
 ### Post Synthesis Simulation of ROTATING_VECTORING using VIVADO
 - For Post Synthesis Simulation we need the genetered `/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/netlist/ROTATING_VECTORING_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
@@ -834,6 +838,8 @@ endmodule
 ![image](https://user-images.githubusercontent.com/120498080/234938911-cff61772-156d-406d-8127-c805637e7520.png)
 ![image](https://user-images.githubusercontent.com/120498080/234939049-5e73d415-76cf-4219-ba47-da304ee664fd.png)
 ![image](https://user-images.githubusercontent.com/120498080/234939174-e43b5a3e-f806-4070-8a24-22f709f8a0a5.png)
+
+- ***NOTE** We can find all the generated file in the attached files in git.* 
 
 ### Post Synthesis Simulation of DOUBLY PIPELINE using VIVADO
 - For Post Synthesis Simulation we need the genetered `/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/netlist/DOUBLY_PIPELINE_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
