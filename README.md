@@ -220,6 +220,8 @@ gui_raise
 
 ![image](https://user-images.githubusercontent.com/120498080/234887095-9a2987d6-a892-4410-885b-da87f1c57521.png)
 
+- ***NOTE** We can find all the generated file in the attached files in git.* 
+
 ### Post Synthesis Simulation of ROTATION using VIVADO
 - For Post Synthesis Simulation we need the genetered `/DIG_DESIGN/INTERNS/dic_lab_02/ABHINAV/ROTATING/netlist/ROTATION_repot.v` file by GENUS and the provided `slow_vdd1v0_basiccells.v` file.
 - We also need a test bench to verify the generted netlist(same as we used during Behavioral Simulation).
